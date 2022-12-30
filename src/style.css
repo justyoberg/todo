@@ -18,8 +18,8 @@
   --green-static: rgb(72, 165, 72);
   --green-hover: rgb(32, 97, 32);
 
-  --red-static: rgb(255, 0, 0);
-  --red-hover: rgb(153, 0, 0);
+  --red-hover: rgb(224, 0, 0);
+  --red-static: rgb(153, 0, 0);
 }
 
 html {
@@ -52,6 +52,11 @@ main {
   grid-row: 2 / 3;
 }
 
+button {
+  background: none;
+  border: none;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
@@ -75,21 +80,57 @@ main {
   background-color: var(--main-medium);
 }
 
-.projects {
-  width: 75%;
+.projects,
+.project-header {
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 3px solid var(--main-darkest);
+}
+
+.projects {
+  width: 75%;
+  flex-direction: column;
 }
 
 .create-project {
   font-size: 4em;
   color: var(--green-static);
-  background: none;
-  border: none;
 }
 
 .create-project:hover {
   color: var(--green-hover);
+}
+
+.delete-project {
+  font-size: 1.5em;
+  color: var(--red-static);
+}
+
+.delete-project:hover {
+  color: var(--red-hover);
+}
+
+.project-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 400px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 1em;
+  border: 2px solid var(--main-darkest);
+  background-color: var(--main-medium);
+}
+
+.project-item {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+.footer {
+  margin-top: auto;
 }
