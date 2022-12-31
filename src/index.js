@@ -1,3 +1,3 @@
-import { setupEventListeners } from "./eventListeners";;
+import { setupOnclickEvents } from "./eventListeners";
 
-setupEventListeners();
+setupOnclickEvents();
