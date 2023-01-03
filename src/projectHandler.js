@@ -11,7 +11,7 @@ export default class ProjectHandler {
 
   static createProject = () => {
     // Create a new default project
-
+    this.updateProjectList();
     // Cap the project amount at 11
     if (this.projects.length >= 11) {return};
     this.projectList.innerHTML = ``;
@@ -77,6 +77,7 @@ export default class ProjectHandler {
   }
 
   static updateProjectList = () => {
+
     // Updates the DOM
     this.projects.forEach((project) => this.projectList.appendChild(project.div));
   }
@@ -115,7 +116,7 @@ export default class ProjectHandler {
 
     let addButton = this.createTodoAddButton(project);
     this.todoContainer.appendChild(addButton);
-    localStorage.setItem("projects", JSON.stringify(projects));
+
   }
 
   static showTodoList = (event) => {
