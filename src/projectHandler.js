@@ -1,4 +1,3 @@
-import { de } from "date-fns/locale";
 import { setupOnclickEvents } from "./eventListeners";
 
 export default class ProjectHandler {
@@ -116,6 +115,7 @@ export default class ProjectHandler {
 
     let addButton = this.createTodoAddButton(project);
     this.todoContainer.appendChild(addButton);
+    localStorage.setItem("projects", JSON.stringify(projects));
   }
 
   static showTodoList = (event) => {
