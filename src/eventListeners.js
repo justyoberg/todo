@@ -5,7 +5,6 @@ export function setupOnclickEvents(){
   // Create project button
   const createProjectBtn = document.querySelector(".create-project");
   createProjectBtn.onclick = ProjectHandler.createProject;
-
   // Delete project buttons
   const deleteProjectBtns = document.querySelectorAll(".delete-project");
   deleteProjectBtns.forEach((btn) => btn.ondblclick = ProjectHandler.deleteProject);
