@@ -48,7 +48,7 @@ export default class ProjectHandler {
     this.projectList.innerHTML = ``;
     // Update Local Storage
     localStorage.setItem("projects", JSON.stringify(this.projects));
-    
+
     if (this.projects.length <= 0) {
       return this.projectList.innerHTML = `
       <div class="project-empty">
@@ -107,7 +107,6 @@ export default class ProjectHandler {
         You have no projects.
       </div>
       `;
-      return;
     };
 
     // Filter the projects array of the item
