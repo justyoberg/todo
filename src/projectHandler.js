@@ -2,8 +2,9 @@ import { setupOnclickEvents } from "./eventListeners";
 
 export default class ProjectHandler {
   
-  static projectCount = 0;
+  
   static projects = JSON.parse(localStorage.getItem("projects") || "[]");
+  static projectCount = JSON.parse(localStorage.getItem("projectCount") || 0);
   static projectList = document.querySelector(".project-list");
   static todoContainer = document.querySelector(".todo");
   static projectName = document.querySelector(".project-name");
@@ -48,6 +49,7 @@ export default class ProjectHandler {
     this.projectList.innerHTML = ``;
     // Update Local Storage
     localStorage.setItem("projects", JSON.stringify(this.projects));
+    localStorage.setItem("projectCount", JSON.stringify(this.projectCount));
 
     if (this.projects.length <= 0) {
       return this.projectList.innerHTML = `
