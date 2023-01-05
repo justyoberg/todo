@@ -128,13 +128,13 @@ export default class ProjectHandler {
       let menuButton = document.createElement("button");
       menuButton.classList.add("edit-todo");
       menuButton.setAttribute("id", project.lists.indexOf(listItem));
-      menuButton.textContent = "☰";
+      menuButton.textContent = "Edit";
       menuButton.onclick = () => this.openTodoMenu(project, project.lists.indexOf(listItem));
       // Delete task button
       let deleteButton = document.createElement("button");
       deleteButton.classList.add("delete-todo");
       deleteButton.setAttribute("id", project.lists.indexOf(listItem));
-      deleteButton.textContent = "X";
+      deleteButton.textContent = "Delete";
       deleteButton.ondblclick = () => this.deleteTodo(project, project.lists.indexOf(listItem));
       deleteButton.style.marginLeft = "16px";
       // Create a container for the buttons

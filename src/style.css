@@ -74,11 +74,11 @@ button {
 }
 
 .list-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   padding: 15px;
-  align-items: center;
   height: 60px;
+  text-align: center;
   background-color: var(--main-dark);
   border-radius: 1em;
   border: 2px solid black;
@@ -157,11 +157,6 @@ button {
   border-radius: 1em;
   border: 2px solid var(--main-darkest);
   background-color: var(--main-medium);
-}
-
-.instructions {
-  width: 75%;
-  text-align: center;
 }
 
 .delete {
