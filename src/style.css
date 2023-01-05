@@ -205,10 +205,6 @@ button {
   margin-top: 20px;
 }
 
-.add-todo:hover {
-  color: black;
-}
-
 .delete-todo {
   color: var(--red-hover);
 }
