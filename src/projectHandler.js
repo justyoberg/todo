@@ -274,12 +274,14 @@ export default class ProjectHandler {
       // If some of the form data is empty, prevent submission
       if(Object.values(data).some((a) => a === "")) return;
 
-      project.name = data.project;
+      this.projects.find(proj => proj.name == project.name).name = data.project;
+
       project.lists[listIndex] = data;
       // Update the DOM with proper project names
       this.updateProjectNames(project);
       // Hide the modal
       modalWrapper.style.display = "none";
+      this.updateProjectList();
       this.updateTodoList(project);
 
     }
