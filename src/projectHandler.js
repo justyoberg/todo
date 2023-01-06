@@ -151,6 +151,7 @@ export default class ProjectHandler {
       `
       listItemDiv.appendChild(buttonContainer);
       this.todoContainer.appendChild(listItemDiv);
+      localStorage.setItem("projects", JSON.stringify(this.projects));
     };
 
     // Create the "Add new" button under the task list
@@ -172,14 +173,16 @@ export default class ProjectHandler {
 
   static addNewTodo = (project) => {
     // Create a new Todo task
-    let defaultTodo = { 
+    let defaultTodo = {
+      project: `${project.name}`,
       title: `Project ${project.id} task`,
       dueDate: `2022-01-01`,
       priority: "low",
     };
 
+    console.log(this.projects.find(proj => proj.name == project.name));
     // Push the task into the project object and update the DOM
-    project.lists.push(defaultTodo);
+    this.projects.find(proj => proj.name == project.name).lists.push(defaultTodo);
     this.updateTodoList(project);
   }
 
